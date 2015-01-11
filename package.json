@@ -1,0 +1,21 @@
+{
+  "name": "Base64-Parser",
+  "version": "0.1.0",
+  "description": "A Base64 Encoder & Decoder",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/saintwinkle/Base64-Parser"
+  },
+  "author": "Twinkle",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/saintwinkle/Base64-Parser/issues"
+  },
+  "homepage": "https://github.com/saintwinkle/Base64-Parser",
+  "dependencies": {
+    "body-parser": "^1.10.1",
+    "express": "^4.10.6",
+    "jade": "^1.8.2"
+  }
+}

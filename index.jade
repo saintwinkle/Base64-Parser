@@ -1,0 +1,25 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title!= title
+    link(rel='stylesheet', href='//lib.sinaapp.com/js/bootstrap/3.0.0/css/bootstrap.min.css')
+    link(rel='stylesheet', href='style.css')
+  body
+    div(class='container')
+      h1 Base64 Encoder/Decoder
+      textarea(class='form-control', placeholder='Input the string you want to encode or decode here', rows='10')
+      p
+        button(class='btn btn-primary', id='encode') Base64 Encode
+        button(class='btn btn-primary', id='decode') Base64 Decode
+    script(src='//lib.sinaapp.com/js/jquery/2.0.3/jquery-2.0.3.min.js')
+    script.
+      $(document).ready(function () {
+        $('button').click(function () {
+          $.post('/base64', { text: $('textarea').val(), type: $(this).attr('id') }, function (data) {
+            $('textarea').val(data);
+          });
+        });
+      });
