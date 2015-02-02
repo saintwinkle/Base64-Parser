@@ -12,16 +12,17 @@ app.use(express.static('./'));
 
 /* GET home page */
 app.get('/', function (req, res) {
-  res.render('index', { title: 'Base64 Encoder/Decoder' });
+  res.render('index', { title: 'Base64 Encoder / Decoder' });
 });
 
 /* POST base64 calculation */
 app.post('/base64', function (req, res) {
-  if (req.param('type') == 'encode') {
-    var result = new Buffer(req.param('text'), 'utf8').toString('base64');
-  } else if (req.param('type') == 'decode') {
-    var result = new Buffer(req.param('text'), 'base64').toString('utf8');
+  if (req.body.type == 'encode') {
+    var result = new Buffer(req.body.text, 'utf8').toString('base64');
+  } else if (req.body.type == 'decode') {
+    var result = new Buffer(req.body.text, 'base64').toString('utf8');
   }
+  console.log(result);
   res.send(result);
 });
 
